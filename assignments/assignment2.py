@@ -16,15 +16,6 @@ def get_cats_info(path):
                     
                 cat_id, name, age = parts
                 
-                try:
-                    age_int = int(age)
-                    if age_int < 0:
-                        print(f"Помилка: Вік не може бути від'ємним для кота {name}: {age}")
-                        continue
-                except ValueError:
-                    print(f"Помилка: Вік має бути числом для кота {name}: {age}")
-                    continue
-                
                 cat_info = {
                     'id': cat_id,
                     'name': name,
