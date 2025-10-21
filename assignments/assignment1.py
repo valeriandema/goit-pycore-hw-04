@@ -15,11 +15,11 @@ def total_salary(path):
                         continue
                     
                     _, salary_str = parts
-                    salary = int(salary_str.strip())
+                    salary = float(salary_str.strip())
                     salaries.append(salary)
                     
                 except ValueError as e:
-                    if "invalid literal for int()" in str(e):
+                    if "invalid literal for float()" in str(e):
                         print(f"Помилка: Неправильне значення зарплати: {line}")
                     else:
                         print(f"Помилка: {e}")
@@ -30,7 +30,7 @@ def total_salary(path):
             return (0, 0)
             
         total = sum(salaries)
-        average = total // len(salaries) 
+        average = total / len(salaries) 
         
         return total, average
         
